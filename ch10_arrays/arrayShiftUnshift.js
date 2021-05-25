@@ -1,3 +1,7 @@
 let items = ["Bread", "Milk", "Tea"];
 
-console.log(items.length); // displays 3
+items.shift(); // ??
+console.log(items); // display the array
+
+items.unshift(); // ??
+console.log(items); // display the array
