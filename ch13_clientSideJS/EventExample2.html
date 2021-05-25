@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Example 2</title>
+  </head>  
+  <body id="body-id">
+
+    <button id="time" type="button">Click to see the current time</button>
+    <p id="demo">PLACEHOLDER</p>
+
+    <script>
+      
+      // Attach a handler to the time button
+      const timeBtn = document.getElementById("time"); 
+      timeBtn.addEventListener("click", dispTime); 
+
+      // Display the time
+      function dispTime() {
+         let dateTimeStr = Date();
+         document.getElementById("demo").textContent = dateTimeStr;
+
+         // Add the time as the last child of body
+         let bodyElem = document.getElementById("body-id");
+         let newPara = document.createElement("p");
+         newPara.textContent  = dateTimeStr;
+         bodyElem.appendChild(newPara);
+      }
+
+    </script>
+  </body>
+</html>

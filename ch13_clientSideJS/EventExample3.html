@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Event Example 3</title>    
+
+  </head>  
+  <body>
+    <h1>Text Entry Demo</h1>
+
+    <label for="txt-field">Enter some text</label>
+    <input type="text" id="txt-field">
+    <button id="ok-btn" type="button">OK</button>
+
+    <!-- an empty div section as a structural placeholder for text -->
+    <div id="result-div"></div>
+
+    <script>
+      
+      const textField = document.getElementById('txt-field');
+      const okBtn = document.getElementById('ok-btn'); // retrieve the OK button
+      okBtn.addEventListener('click', buttonClicked); // attach the handler
+
+      // Handler code to execute when the OK button gets clicked
+      function buttonClicked() {
+
+         // Add the entered data as the last child of the result division
+         let divElem = document.getElementById("result-div");
+         let newPara = document.createElement("p");
+         newPara.textContent = textField.value;
+         divElem.appendChild(newPara);
+
+         textField.focus(); // set the focus back to the text field
+         textField.value = ""; // clear the contents of the text field
+      }
+      
+    </script>
+  </body>
+</html>

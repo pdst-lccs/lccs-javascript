@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Event Example 4</title>    
+
+  </head>  
+  <body>
+    <h1>List Demo</h1>
+
+    <label for="txt-field">Enter some text</label>
+    <input type="text" id="txt-field">
+    <button id="ok-btn" type="button">OK</button>
+
+    <!-- an empty div section as a structural placeholder for text -->
+    <div id="result-div"></div>
+
+    <script>
+      
+      const textField = document.getElementById('txt-field');
+      textField.focus(); // set the focus to the text field
+
+      // Attach a listener to the ok button - in one step!
+      document.getElementById('ok-btn').addEventListener('click', buttonClicked);
+
+      function buttonClicked() {
+         let dataEntered = textField.value;
+
+         let listItem = document.createElement("li");
+         listItem.textContent = dataEntered;
+
+         // Add the entered data as the last child of an unordered list
+         let unorderedList = document.getElementById("ul");
+
+         // If the list doesn't exist create it and ....
+         // ... insert it as a child of the result division
+         if (unorderedList == null) {
+            let divElem = document.getElementById("result-div");
+            unorderedList = document.createElement("ul");
+            divElem.appendChild(unorderedList);
+         }
+
+         unorderedList.appendChild(listItem);
+
+         textField.focus();
+         textField.value = "";
+      }
+      
+    </script>
+  </body>
+</html>
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My first event handler</title>
+  </head>  
+  <body id="body-id">
+    <button id="btn-id" type="button">Click me!</button>
+    
+    <script>
+
+      // 1. Retrieve the button handle
+      const btnRef = document.getElementById("btn-id"); 
+
+      // 2. Attach an event click handler to the time button
+      btnRef.addEventListener("click", displayMessage); 
+
+      // 3. Handler for time button
+      function displayMessage() {
+          alert("Hello World!")
+      }
+
+    </script>
+ 
+  </body>
+</html>
