@@ -11,7 +11,7 @@ while (quit == false) {   // Q4 the original code is 'wrapped' inside this while
   // STEP 2. Ask the user the question and get a response
   // n1 and n2 are converted to strings so that they can be displayed as part ...
   // ... of the prompt string
-  let problemInWords = "What is "+ String(n1) + " plus " + String(n2);
+  let problemInWords = "What is "+ String(n1) + " + " + String(n2);
   console.log(problemInWords);
   let userResponse = Number(prompt(problemInWords));
   console.log("User entered %d", userResponse); // this is for debug purposes
